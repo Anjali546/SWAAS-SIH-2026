@@ -4,7 +4,7 @@ import {
   LineChart, Line
 } from 'recharts';
 
-const API = 'http://127.0.0.1:8000';
+const API = 'https://swaas-sih-2026-2.onrender.com';
 
 const fallback = {
   location: "Delhi NCR",
