@@ -374,9 +374,9 @@ function Hotspots({data}) {
   </>
 }
 
-function Reliability({data,statusClass}) {
+function Reliability({data,statusClass,reliability}) {
   return <>
-    <div className="reliability-hero"><div><div className="eyebrow">FORECAST TRUST SCORE</div><div className="big-score">{data.trust_score}<small>/100</small></div><p>Dynamic reliability indicator for the current forecast.</p></div><div className={`risk-card ${statusClass}`}><span>FAILURE RISK</span><strong>{data.failure_risk}</strong><p>{data.failure_reasons.join(" • ")}</p></div></div>
+    <div className="reliability-hero"><div><div className="eyebrow">FORECAST TRUST SCORE</div><div className="big-score">{reliability?.trust_score ?? data.trust_score}<small>/100</small></div><p>Dynamic reliability indicator for the current forecast.</p></div><div className={`risk-card ${statusClass}`}><span>FAILURE RISK</span><strong>{data.failure_risk}</strong><p>{data.failure_reasons.join(" • ")}</p></div></div>
     <div className="grid2">
       <Panel title="TRUST COMPONENTS">
         {["Data quality","Model agreement","Prediction uncertainty","Recent forecast error","Environmental stability"].map((x,i)=><div className="component" key={x}><span>{x}</span><div className="component-bar"><i style={{width:`${[92,78,71,83,86][i]}%`}}/></div><b>{[92,78,71,83,86][i]}%</b></div>)}
