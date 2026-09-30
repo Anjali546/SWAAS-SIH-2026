@@ -163,11 +163,12 @@ try {
   />
 )}
         {tab === "hotspots" && <Hotspots data={data} />}
-        {tab === "reliability" && <Reliability data={data} statusClass={statusClass} />}
+        {tab === "reliability" && <Reliability data={data} statusClass={statusClass} reliability={reliability} />}
 {tab === "precautions" && <Precautions />}
         <footer>
           <b>SWAAS • Team VisionX • SIH 2026</b>
           <span>Prototype • Reliability-aware AI decision layer</span>
+          
         </footer>
       </main>
     </div>
